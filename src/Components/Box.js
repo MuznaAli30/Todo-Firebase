@@ -3,14 +3,14 @@ import React from 'react';
 import Items from './Items';
 
 export default function Box(props) {
-  const work = props.data.map((singleData, index) => {
+  const work = props.data.map((singleData) => {
     return (
       <Items
-        removeHandler={props.removeHandler}
-        editHandler={props.editHandler} // Pass the editHandler function
-        key={index}
-        id={index}
-        item={singleData.item}
+        removeHandler={() => props.removeHandler(singleData.id)}
+        editHandler={(newItem) => props.editHandler(singleData.id, newItem)}
+        key={singleData.id}
+        id={singleData.id}
+        item={singleData.todos}
         time={singleData.time}
       />
     );

@@ -16,7 +16,7 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
+const db = getFirestore(app);
 // Export firestore database
 // It will be imported into your react app whenever it is needed
-export const db = getFirestore(app);
+export {db};
